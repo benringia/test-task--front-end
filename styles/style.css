@@ -79,10 +79,22 @@ html {
 }
 
 .site-header-menu {
-  max-width: 50px;
   align-self: center;
+  position: fixed;
+  right: 0px;
+  z-index: 10;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 1px 0px 1px 0px rgb(3 3 3 / 6%);
+  border-radius: 10px 0 0 10px;
+  transition: all 0.2s ease-in-out;
 }
-@media (min-width: 992px) {
+.site-header-menu.active {
+  right: 195.5px;
+  transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 993px) {
   .site-header-menu {
     display: none;
   }
@@ -290,6 +302,11 @@ html {
     width: 180px;
   }
 }
+@media (max-width: 992px) {
+  .search-bar {
+    width: 100%;
+  }
+}
 
 /*--------------------------------------------------
   Nav Buttons
@@ -298,19 +315,51 @@ html {
   display: flex;
   align-items: center;
 }
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .nav-menu {
-    display: none;
+    position: fixed;
+    right: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 9;
+    background: #fff;
+    -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1),
+      0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+
+    flex-direction: column-reverse;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
   }
 }
 
-.nav-btns {
-  margin-left: 30px;
+.nav-menu.js-menu-opened {
+  right: 0;
+  transition: all 0.2s ease-in-out;
 }
 .nav-btns.icons {
-  margin-left: 25px;
   display: flex;
   align-items: center;
+}
+@media (max-width: 992px) {
+  .nav-btns:not(.icons) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .nav-btns.icons {
+    margin-bottom: 12px;
+  }
+}
+@media (min-width: 992px) {
+  .nav-btns {
+    margin-left: 30px;
+  }
+  .nav-btns.icons {
+    margin-left: 25px;
+  }
 }
 
 .button {
@@ -322,12 +371,25 @@ html {
   cursor: pointer;
   font-family: "Roboto", sans-serif;
 }
+@media (max-width: 992px) {
+  .button {
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 0;
+  }
+}
 
 .button.is-blue {
   margin-right: 22px;
   background: #fff;
   border: 1px solid #2478cc;
   color: #2478cc;
+}
+@media (max-width: 992px) {
+  .button.is-blue {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
 }
 .button.is-yellow {
   background: #ffc700;
@@ -353,10 +415,23 @@ html {
   margin-left: 35px;
   align-items: center;
 }
+@media (max-width: 992px) {
+  .user-profile-nav {
+    margin-left: 0;
+    flex-direction: column-reverse;
+  }
+}
 
 .user-welcome {
   position: relative;
   font-size: 11.48px;
+}
+
+@media (max-width: 992px) {
+  .user-welcome {
+    font-size: 18px;
+    margin: 16px 0;
+  }
 }
 .user-welcome::after {
   content: url(../assets/icons/down-arrow-icon.svg);
@@ -364,8 +439,12 @@ html {
   cursor: pointer;
 }
 .user-profile-nav img {
-  margin-left: 6px;
   display: block;
+}
+@media (min-width: 992px) {
+  .user-profile-nav img {
+    margin-left: 6px;
+  }
 }
 .user-dropdwn {
   color: #000;
