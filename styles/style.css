@@ -329,7 +329,7 @@ html {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 
     flex-direction: column-reverse;
-    justify-content: center;
+    justify-content: flex-end;
     transition: all 0.2s ease-in-out;
   }
 }
@@ -449,4 +449,86 @@ html {
 .user-dropdwn {
   color: #000;
   text-decoration: none;
+}
+
+/*--------------------------------------------------
+  nav-lists / site-nav
+--------------------------------------------------*/
+
+.nav-lists {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.nav-lists li {
+  list-style: none;
+}
+
+.nav-lists a {
+  font-size: 17px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+}
+@media (max-width: 1200px) {
+  .nav-lists a {
+    font-size: 15px;
+  }
+}
+.nav-lists li:hover a {
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .site-nav-type-2-res {
+    display: flex;
+  }
+  .site-nav-type-2 {
+    display: none;
+  }
+}
+
+.nav-lists .has-arrow.active::after,
+.nav-lists .has-arrow::after {
+  content: url("../assets/icons/up-arrow.svg");
+  margin-left: 4px;
+}
+.nav-lists .has-arrow::after {
+  content: url("../assets/icons/down-arrow-icon2.svg");
+}
+
+.nav-lists .active {
+  font-weight: 700;
+}
+li.list-act {
+  border-bottom: 2px solid #000;
+}
+
+/*--------------------------------------------------
+    site-nav-type2-res
+--------------------------------------------------*/
+
+.site-nav-type-2-res {
+  display: none;
+  margin: 20px 0;
+  width: 100%;
+}
+.nav-lists-res li {
+  list-style: none;
+  padding: 5px 8px;
+}
+
+.nav-lists-res a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .site-nav-type-2-res {
+    display: block;
+  }
 }
