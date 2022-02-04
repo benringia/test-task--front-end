@@ -56,6 +56,9 @@ html {
     text-align: center;
   }
 }
+.reg-btn-container {
+  display: flex;
+}
 .reg-btn {
   background-color: #fff;
   border: none;
@@ -85,7 +88,8 @@ html {
   z-index: 10;
   padding: 10px;
   background: #fff;
-  box-shadow: -2px 1px 1px 0px rgb(3 3 3 / 15%);
+  box-shadow: -2px -1px 4px 0px rgb(3 3 3 / 7%);
+  /* box-shadow: 0 4px 4px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 20%); */
   border-radius: 10px 0 0 10px;
   transition: all 0.2s ease-in-out;
 }
@@ -711,6 +715,12 @@ li.list-act {
   cursor: pointer;
 }
 
+.comm-btn.download::before {
+  content: url(../assets/icons/download-icon.svg);
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 .apply-btn-details {
   font-size: 12px;
   color: #702626;
@@ -761,9 +771,6 @@ li.list-act {
 /*--------------------------------------------------
     PROGRAM LIST
 --------------------------------------------------*/
-
-.program-list {
-}
 
 .program-list li {
   list-style: none;
@@ -892,8 +899,6 @@ li.list-act {
   font-family: "Poppins";
   margin-bottom: 14px;
 }
-.video-area {
-}
 .video {
   border-radius: 5.5px;
   overflow: hidden;
@@ -959,6 +964,11 @@ li.list-act {
 }
 .video-views {
   letter-spacing: 0.6px;
+}
+@media (max-width: 576px) {
+  .video-views {
+    font-size: 15px;
+  }
 }
 .download-btn-details {
   text-align: center;
@@ -1061,6 +1071,12 @@ li.list-act {
   margin-bottom: 8px;
 }
 
+@media (max-width: 576px) {
+  .call-content {
+    font-size: 16px;
+  }
+}
+
 .show-more {
   font-family: "Roboto", "sans-serif";
   font-size: 12px;
@@ -1098,11 +1114,14 @@ li.list-act {
 --------------------------------------------------*/
 
 .comment-section {
-  margin-top: 25px;
+  margin-top: 18px;
 }
 .count-container {
   display: flex;
   margin-bottom: 20px;
+}
+.comment-container {
+  margin-bottom: 28px;
 }
 .comment-count {
   color: #030303;
@@ -1137,6 +1156,13 @@ li.list-act {
   margin-right: 17px;
   display: flex;
 }
+.user-link.block {
+  display: block;
+}
+
+.block img {
+  cursor: pointer;
+}
 
 .comment-input {
   border: none;
@@ -1153,4 +1179,190 @@ li.list-act {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.2px;
+}
+
+.comment-container {
+  display: flex;
+}
+
+.user-name {
+  color: #030303;
+  font-size: 13px;
+}
+.time {
+  font-size: 12px;
+  color: #606060;
+  margin-left: 4px;
+}
+.comment-body {
+  font-size: 13px;
+  margin-bottom: 11px;
+}
+
+/*--------------------------------------------------
+    COMMENT LIKES
+--------------------------------------------------*/
+
+.likes {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.like-count,
+.reply {
+  color: #606060;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.like-count {
+  margin-right: 17px;
+}
+
+.reply {
+  font-size: 12px;
+}
+
+.like-icon,
+.dislike-icon {
+  margin-right: 9px;
+  cursor: pointer;
+}
+
+.dislike-icon {
+  margin-right: 24px;
+}
+
+.dislike-icon img {
+  vertical-align: middle;
+}
+
+/*--------------------------------------------------
+    COMMENT REPLIES
+--------------------------------------------------*/
+
+.view-more {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #065fd4;
+  padding-left: 20px;
+  position: relative;
+}
+
+.view-more::before {
+  content: url(../assets/icons/comment-down-arw.svg);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/*--------------------------------------------------
+   download-section
+--------------------------------------------------*/
+
+.download-section {
+  margin-top: 16px;
+}
+
+.download-section-title {
+  font-family: "Poppins", "sans-serif";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  color: #0f131a;
+}
+
+.download-sub {
+  font-size: 18px;
+  color: #595e67;
+  margin-bottom: 16px;
+}
+
+.download-list {
+  padding: 16px 28px;
+  box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24),
+    0px 3px 8px -1px rgba(50, 50, 71, 0.05);
+  background: #fff;
+  border-radius: 4px;
+}
+
+.download-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .download-list li {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 410px) {
+  .download-list li {
+    align-items: inherit;
+  }
+}
+
+.download-list li p {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.19px;
+  color: #0f131a;
+  position: relative;
+  margin-left: 35px;
+}
+@media (max-width: 768px) {
+  .download-list li p {
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 410px) {
+  .download-list li p {
+    font-size: 17px;
+  }
+}
+
+.download-list li:not(:last-of-type) {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0dfdf;
+}
+
+.download-list li:not(:first-of-type) {
+  padding-top: 16px;
+}
+.file:before,
+.file-table::before,
+.file-archive::before {
+  content: url(../assets/icons/file.svg);
+  position: absolute;
+  left: -35px;
+  bottom: -10px;
+}
+@media (max-width: 410px) {
+  .file:before,
+  .file-table::before,
+  .file-archive::before {
+    bottom: 2px;
+  }
+}
+.file-table::before {
+  content: url(../assets/icons/file-table.svg);
+}
+.file-archive::before {
+  content: url(../assets/icons/file-archive.svg);
+}
+.download-list li p::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #0f131a;
 }
