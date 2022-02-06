@@ -852,7 +852,8 @@ li.list-act {
 .chat-btn-container {
   margin-bottom: 10px;
 }
-.chat-button {
+.chat-button,
+.btn-no-icon {
   font-weight: 900;
   font-family: "Inter", "sans-serif";
   font-size: 14px;
@@ -862,6 +863,13 @@ li.list-act {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.btn-no-icon {
+  padding: 13.5px 58px;
+  font-family: "Roboto", "sans-serif";
+  font-weight: 700;
+  letter-spacing: 0.14px;
 }
 
 .chat-button::before {
@@ -979,7 +987,7 @@ li.list-act {
     CONTENT-SECTION
 --------------------------------------------------*/
 
-.content-section {
+.content-section:not(:last-of-type) {
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -989,6 +997,7 @@ li.list-act {
 --------------------------------------------------*/
 .call-section {
   margin-top: 12px;
+  text-align: center;
 }
 
 .call-details-container {
@@ -1365,4 +1374,42 @@ li.list-act {
   bottom: 0;
   left: 0;
   background: #0f131a;
+}
+
+/*--------------------------------------------------
+  apply-section
+--------------------------------------------------*/
+
+.apply-section {
+  padding: 32px 77px;
+  border-radius: 8px;
+  border: 1px solid #49a55d;
+  margin-top: 90px;
+}
+
+.apply-section-title,
+.apply-section-sub {
+  font-family: "Poppins", "sans-serif";
+  font-size: 24px;
+  color: #000;
+  font-weight: 400;
+  letter-spacing: 0.9px;
+  text-align: center;
+}
+
+.apply-section-sub {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.apply-section p {
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 17px;
+}
+
+.btn-container {
+  text-align: center;
 }
