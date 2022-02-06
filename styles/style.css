@@ -59,6 +59,11 @@ html {
 .reg-btn-container {
   display: flex;
 }
+@media (max-width: 576px) {
+  .reg-btn-container {
+    width: 100%;
+  }
+}
 .reg-btn {
   background-color: #fff;
   border: none;
@@ -78,6 +83,20 @@ html {
     border-radius: 20px;
     padding: 10px 15px;
     margin-bottom: 12px;
+  }
+}
+@media (max-width: 576px) {
+  .reg-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 530px) {
+  .reg-btn {
+    border-radius: 0;
   }
 }
 
@@ -1496,8 +1515,16 @@ li.list-act {
 @media (max-width: 768px) {
   .footer-list-container {
     flex-wrap: wrap;
+    padding-bottom: 50px;
   }
 }
+
+@media (max-width: 576px) {
+  .footer-list-container {
+    padding-bottom: 35px;
+  }
+}
+
 @media (max-width: 410px) {
   .footer-list-container {
     flex-direction: column;
