@@ -830,7 +830,13 @@ li.list-act {
 
 .comm-btn.download {
   font-size: 12px;
-  padding: 4px 52px;
+  padding: 4px 22px;
+}
+
+@media (min-width: 768px) {
+  .comm-btn.sign-up {
+    padding: 11px 40.5px;
+  }
 }
 
 .comm-btn.download::before {
@@ -1382,7 +1388,9 @@ li.list-act {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 37px;
+  align-items: center;
 }
+
 .user-link {
   margin-right: 17px;
   display: -webkit-box;
@@ -1401,6 +1409,7 @@ li.list-act {
   border: none;
   border-bottom: 1px solid #0000001a;
   width: 100%;
+  padding: 5px 0;
 }
 
 .comment-input:focus {
